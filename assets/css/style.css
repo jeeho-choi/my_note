@@ -1,27 +1,14 @@
-h1, h2, h3, h4, h5, p {
+html {
+  -webkit-text-size-adjust: none;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-size: inherit;
-  font-weight: normal;
-  user-select: none;
-  -webkit-appearance: none;
-  outline: none;
-  border-radius: 0;
-  background: none;
   border: none;
-}
-
-input, button, textarea {
-  font-family: inherit;
-  -webkit-appearance: none;
-}
-
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
@@ -44,12 +31,14 @@ blockquote:before, blockquote:after, q:before, q:after {
   content: none;
 }
 
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
+a:link, a:visited, a:active, a:hover {
+  text-decoration: none;
+  color: inherit;
+  -webkit-appearance: none;
+}
+
+img {
+  vertical-align: top;
 }
 
 table {
@@ -57,7 +46,6 @@ table {
   border-spacing: 0;
 }
 
-/* change border colour to suit your needs */
 hr {
   display: block;
   height: 1px;
@@ -67,8 +55,55 @@ hr {
   padding: 0;
 }
 
-input, select {
+/* change border colour to suit your needs */
+input, button, select, textarea {
+  font-family: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   vertical-align: middle;
+}
+
+input[type="checkbox, radio"], button, select {
+  cursor: pointer;
+}
+
+#mainWrap {
+  width: 80vw;
+  height: 60vh;
+  margin: 20vh 10vw;
+}
+#mainWrap .main_visual {
+  width: 30vw;
+  height: 90%;
+  top: 5%;
+  right: 0;
+  background: #fff;
+}
+#mainWrap a {
+  font-size: 16vh;
+  line-height: 20vh;
+  color: rgba(224, 146, 230, 0.4);
+  display: block;
+}
+#mainWrap a:hover {
+  color: #e092e6;
+}
+#mainWrap a:hover .main_visual {
+  display: block;
+  z-index: 10;
+}
+#mainWrap a .main_visual {
+  display: none;
+  z-index: 5;
+}
+#mainWrap a .visual1 {
+  background: khaki;
+}
+#mainWrap a .visual2 {
+  background: lightcoral;
+}
+#mainWrap a .visual3 {
+  background: sandybrown;
 }
 
 html, body {
@@ -79,6 +114,79 @@ body {
   background: #181818;
   font-family: "Montserrat";
   overflow: hidden;
+}
+
+a.back_btn {
+  width: 80px;
+  height: 73px;
+  top: 88px;
+  left: 120px;
+  z-index: 1000;
+}
+a.back_btn:hover .b_squ {
+  background: rgba(255, 255, 255, 0.8);
+  animation: none;
+}
+a.back_btn .b_squ {
+  width: 13px;
+  height: 13px;
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
+  transition: background-color 0.5s ease;
+}
+a.back_btn div {
+  top: 30px;
+  left: 0;
+}
+a.back_btn div .b_squ {
+  margin-right: 2px;
+  float: left;
+}
+a.back_btn .squ1, a.back_btn .squ8 {
+  animation: bgColor 5s ease infinite 2s;
+}
+a.back_btn .squ2, a.back_btn .squ4, a.back_btn .squ9 {
+  animation: bgColor 5s ease infinite 1s;
+}
+a.back_btn .squ3, a.back_btn .squ7 {
+  animation: bgColor 5s ease infinite 3s;
+}
+a.back_btn .squ5, a.back_btn .squ6 {
+  animation: bgColor 5s ease infinite 4s;
+}
+a.back_btn .squ6, a.back_btn .squ7 {
+  left: 15px;
+}
+a.back_btn .squ8, a.back_btn .squ9 {
+  left: 30px;
+}
+a.back_btn .squ6 {
+  top: 15px;
+}
+a.back_btn .squ7 {
+  bottom: 15px;
+}
+a.back_btn .squ8 {
+  top: 0;
+}
+a.back_btn .squ9 {
+  bottom: 0;
+}
+
+@keyframes bgColor {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  20% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+#content {
+  width: 80%;
+  height: 70%;
 }
 
 main {
@@ -108,77 +216,9 @@ canvas {
   line-height: 2.5;
 }
 
-a {
-  text-decoration: none;
-  -webkit-appearance: none;
-  color: inherit;
-}
-
-.social {
-  padding-top: 1rem;
-}
-.social a {
-  vertical-align: middle;
-  display: inline-block;
-  opacity: 0;
-  visibility: hidden;
-  color: rgba(255, 255, 255, 0.3);
-  /* transition: all 0.7s ease 0.15s;  */
-}
-.social a svg {
-  height: 1.25rem;
-  margin: 0 0.5rem;
-  fill: rgba(255, 255, 255, 0.3);
-  transition: all 0.2s ease;
-}
-.social a:hover {
-  color: #fff;
-}
-.social a:hover svg {
-  fill: #fff;
-}
-.social__twitter {
-  transform: translateX(-10px);
-}
-.social__codepen {
-  transform: translateX(10px);
-}
-.social__codepen p {
-  float: right;
-}
-.social.active {
-  opacity: 1;
-}
-.social.active a {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-}
-
-.mouse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-  padding: 1rem 0;
-  z-index: 2;
-  color: rgba(255, 255, 255, 0.3);
-  width: 100%;
-  letter-spacing: 6px;
-  font-size: 0.45em;
-  line-height: 2.5;
-  text-transform: uppercase;
-  transition: all 0.5s ease;
-  opacity: 0;
-  transform: translateY(-15px);
-}
-.mouse.active {
-  transform: none;
-  opacity: 1;
-}
-
 .text-animation {
   opacity: 0;
+  font-weight: 400;
 }
 .text-animation.active {
   opacity: 1;
@@ -207,5 +247,51 @@ a {
     color: rgba(255, 255, 255, 0.3);
   }
 }
+.social {
+  padding-top: 1rem;
+}
+.social a {
+  vertical-align: middle;
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+  color: rgba(255, 255, 255, 0.3);
+  /* transition: all 0.7s ease 0.15s;  */
+}
+.social a svg {
+  height: 1.25rem;
+  margin: 0 0.5rem;
+  fill: rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+.social a:hover {
+  color: #fff;
+}
+.social a:hover svg {
+  fill: #fff;
+}
+.social__twitter {
+  transform: translateX(-10px);
+}
+.social__codepen {
+  transform: translateX(10px);
+}
+.social__codepen p {
+  float: right;
+}
+.social.active {
+  opacity: 1;
+}
+.social.active a {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* .mouse{
+  position: absolute; top: 0; left: 0; text-align: center; padding: 1rem 0; z-index: 2; color: rgba(255,255,255,0.3); width: 100%; letter-spacing: 6px; font-size: 0.45em; line-height: 2.5; text-transform: uppercase; transition: all 0.5s ease; opacity: 0; transform:translateY(-15px);
+  &.active{ transform: none; opacity: 1; }
+} */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,41 +1,88 @@
 @charset "UTF-8";
 //reset
-h1,h2,h3,h4,h5,p,{ margin: 0; padding: 0; box-sizing: border-box; font-size: inherit; font-weight: normal; user-select: none; -webkit-appearance: none; outline: none; border-radius: 0; background: none; border: none; }
-input, button, textarea{ font-family: inherit; -webkit-appearance: none; }
-
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+html{-webkit-text-size-adjust: none;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border: none;-webkit-box-sizing: border-box;box-sizing: border-box; outline:none; font-size:100%; vertical-align:baseline; background:transparent; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
 ul { list-style:none; }
 blockquote, q { quotes:none; }
 blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+a:link, a:visited, a:active, a:hover { text-decoration: none; color: inherit; -webkit-appearance: none;  }
+img{vertical-align: top;}
 table { border-collapse:collapse; border-spacing:0; }
-/* change border colour to suit your needs */
-hr { display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0; }
-input, select { vertical-align: middle;}
+hr { display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0; } /* change border colour to suit your needs */
+input, button, select, textarea{ font-family: inherit; -webkit-appearance: none;  -moz-appearance: none; vertical-align: middle;}
+input[type="checkbox, radio"], button, select {cursor: pointer;}
 
+//common
 
+//main
+#mainWrap{
+    width: 80vw;height: 60vh;margin: 20vh 10vw;
+    .main_visual{width: 30vw; height: 90%; top: 5%; right: 0; background: #fff;}
+    a{
+        font-size: 16vh;line-height: 20vh;color: rgb(224, 146, 230, .4);display: block;
+        &:hover{
+            color: rgb(224, 146, 230, 1);
+            .main_visual{display: block;z-index: 10;}
+        }
+        .main_visual{display: none;z-index: 5;}
+        .visual1{background: khaki;}
+        .visual2{background: lightcoral;}
+        .visual3{background: sandybrown;}
+    }
+}
 
-//test1
-  
-  html, body{ height: 100%; }
-  
-  body{ background: #181818; font-family: 'Montserrat'; overflow: hidden; }
-  
-  
-  main{ display: flex; justify-content: center; height: 100%; min-height: 100%; width: 100%; }
-  
-  canvas{ position: absolute; top: 0; left: 0; }
-  
-  .plate{ position: absolute; bottom: 0; left: 0; width: 100%; padding: 1rem 0; text-align: center; color: #fff; letter-spacing: 4px; font-size: 0.6em; line-height: 2.5; }
-  
-  a{ text-decoration: none; -webkit-appearance: none; color: inherit;}
-  
-  .social{
+//coding
+html, body{ height: 100%; }
+body{ background: #181818; font-family: 'Montserrat'; overflow: hidden; }
+a.back_btn{
+    width: 80px;height: 73px;top: 88px; left: 120px;z-index: 1000;
+    &:hover .b_squ{background: rgba(255, 255, 255, 0.8);animation: none;}
+    .b_squ{width: 13px;height: 13px;background: rgba(255, 255, 255, 0.2);display: block;transition: background-color .5s ease;}
+    div{
+        top: 30px;left: 0;
+        .b_squ{margin-right: 2px;float: left;}
+    }
+    .squ1, .squ8{animation: bgColor 5s ease infinite 2s;}
+    .squ2, .squ4, .squ9{animation: bgColor 5s ease infinite 1s;}
+    .squ3, .squ7{animation: bgColor 5s ease infinite 3s;}
+    .squ5, .squ6{animation: bgColor 5s ease infinite 4s;}
+    .squ6, .squ7{left: 15px;}
+    .squ8, .squ9{left: 30px;}
+    .squ6{top: 15px;}
+    .squ7{bottom: 15px;}
+    .squ8{top: 0;}
+    .squ9{bottom: 0;}
+}
+@keyframes bgColor {
+    0%{background-color:rgba(255, 255, 255, 0.2);}
+    20%{background-color:rgba(255, 255, 255, 0.3);}
+    100%{background-color:rgba(255, 255, 255, 0.1);}
+}
+#content{width: 80%;height: 70%;}
+
+main{ display: flex; justify-content: center; height: 100%; min-height: 100%; width: 100%; }
+//codepen bg
+canvas{ position: absolute; top: 0; left: 0; }
+.plate{ position: absolute; bottom: 0; left: 0; width: 100%; padding: 1rem 0; text-align: center; color: #fff; letter-spacing: 4px; font-size: 0.6em; line-height: 2.5; }
+.text-animation{
+    opacity: 0;font-weight: 400;
+    &.active{ opacity: 1; }
+    .letter{
+        opacity: 0; transition: color 0.5s ease, opacity 0.3s ease; transform-origin: bottom; color: #fff;
+        &.active{ color: rgba(255,255,255,0.3); opacity: 1; transform: none; animation: color 5s ease infinite 3s; }
+    }
+}
+@keyframes color {
+  0%{ color: rgba(255,255,255,1); }
+  20%{ color: rgba(255,255,255,0.3); }
+  100%{ color: rgba(255,255,255,0.3); }
+}
+.social{
     padding-top: 1rem;
     a{ 
         vertical-align: middle; display: inline-block; opacity: 0; visibility: hidden; color: rgba(255,255,255,0.3); /* transition: all 0.7s ease 0.15s;  */
-        svg{ height: 1.25rem; margin: 0 0.5rem; fill: rgba(255,255,255,0.3); transition: all 0.2s ease; }
+        svg{ height: 1.25rem; margin: 0 0.5rem; fill: rgba(255,255,255,0.3); transition: all 0.2s ease; vertical-align: middle; }
         &:hover{color: #fff; 
             svg{fill: #fff;}
         }
@@ -46,29 +93,11 @@ input, select { vertical-align: middle;}
         p{float: right;}
     }
     &.active{
-      opacity: 1;
-      a{ opacity: 1; visibility: visible; transform: none; }
+        opacity: 1;
+        a{ opacity: 1; visibility: visible; transform: none; }
     }
-  }
-  
-  .mouse{
-    position: absolute; top: 0; left: 0; text-align: center; padding: 1rem 0; z-index: 2; color: rgba(255,255,255,0.3); width: 100%; letter-spacing: 6px; font-size: 0.45em; line-height: 2.5; text-transform: uppercase; transition: all 0.5s ease; opacity: 0; transform: translateY(-15px);
-    &.active{ transform: none; opacity: 1; }
-  }
-  
-  .text-animation{
-    opacity: 0;
-    &.active{
-      opacity: 1;
-    }
-    .letter{
-      opacity: 0; transition: color 0.5s ease, opacity 0.3s ease; transform-origin: bottom; color: #fff;
-      &.active{ color: rgba(255,255,255,0.3); opacity: 1; transform: none; animation: color 5s ease infinite 3s; }
-    }
-  }
-  
-  @keyframes color {
-    0%{ color: rgba(255,255,255,1); }
-    20%{ color: rgba(255,255,255,0.3); }
-    100%{ color: rgba(255,255,255,0.3); }
-  }
+}
+/* .mouse{
+  position: absolute; top: 0; left: 0; text-align: center; padding: 1rem 0; z-index: 2; color: rgba(255,255,255,0.3); width: 100%; letter-spacing: 6px; font-size: 0.45em; line-height: 2.5; text-transform: uppercase; transition: all 0.5s ease; opacity: 0; transform:translateY(-15px);
+  &.active{ transform: none; opacity: 1; }
+} */

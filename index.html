@@ -2,24 +2,41 @@
 <html lang="en">
 
 <head>
+    <!-- <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>My Note</title>
-    <!--[if lt IE 9]> 
-        <script src="assets/js/html5shiv.min.js"></script> 
-    <![endif]-->
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css"/>
+    <!--[if lt IE 9]> <script src="assets/js/html5shiv.min.js"></script> <![endif]-->
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css"/> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {background-color: #363636;}
+    </style>
     <script src="assets/js/html5shiv.min.js"></script>
     <script src="assets/js/jquery-1.12.4.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
     <script src="assets/js/script.js"></script>
 </head>
 
 <body>
-    <a href="assets/html/test1.html">effect test 1</a>
+    <div id="mainWrap" class="position-relative">
+        <div class="main_visual position-absolute"></div>
+        <a href="assets/html/uiux.html" id="mainBtn1">
+            UIUX
+            <div class="main_visual visual1 position-absolute"></div>
+        </a>
+        <a href="assets/html/coding.html" id="mainBtn2">
+            CODING
+            <div class="main_visual visual2 position-absolute"></div>
+        </a>
+        <a href="assets/html/source.html" id="mainBtn3">
+            SOURCE
+            <div class="main_visual visual3 position-absolute"></div>
+        </a>
+    </div>
 </body>
 
 </html>

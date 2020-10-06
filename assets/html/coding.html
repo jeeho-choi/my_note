@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>IT Event</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800,900" rel="stylesheet" type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>coding</title>
+    <!--[if lt IE 9]> <script src="assets/js/html5shiv.min.js"></script> <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,800,900">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
-
         const tools = {
             drawPath(ctx, fn) {
                 ctx.save();
@@ -63,7 +68,7 @@
             }
         };
         const cfg = {
-            cell: 35,
+            cell: 30,
             sectionWidth: 8,
             sectionHeight: 1,
             numberOffset: 5,
@@ -143,8 +148,7 @@
                         setTimeout(() => {
                             if (letter1) letter1.classList.add('active');
                             if (letter2) letter2.classList.add('active');
-                            if (i === length - 1 && elIndex === ui.textNodes.length - 1)
-                                callback();
+                            if (i === length - 1 && elIndex === ui.textNodes.length - 1) callback();
                         }, i * 100);
                     }
                 });
@@ -241,11 +245,36 @@
 
             updateTextConfig() {
                 const state = this.state;
-                state.text = {
-                    baseLine: 'top',
-                    font: '800 170px Montserrat',
-                    value: 'PUBLISHING'
-                };
+                // state.text = {
+                //     baseLine: 'top',
+                //     font: '800 170px Montserrat',
+                //     value: 'CODING'
+                // };
+                if ( window.innerWidth > 1600 ) {
+                    state.text = {
+                        baseLine: 'top',
+                        font: '800 170px Montserrat',
+                        value: 'CODING'
+                    };
+                }else if ( window.innerWidth > 960 ) {
+                    state.text = {
+                        baseLine: 'top',
+                        font: '800 150px Montserrat',
+                        value: 'CODING'
+                    };
+                }else if ( window.innerWidth > 720 ) {
+                    state.text = {
+                        baseLine: 'top',
+                        font: '800 100px Montserrat',
+                        value: 'CODING'
+                    };
+                }else {
+                    state.text = {
+                        baseLine: 'top',
+                        font: '800 80px Montserrat',
+                        value: 'CODING'
+                    };
+                }
             }
 
             initCheckingInterval() {
@@ -1065,11 +1094,37 @@
         window.addEventListener('load', () => {
             window.app = new App();
         });
+
+        $(function () {
+            var $b_btn = $('.back_btn');
+            $b_btn.hide();
+            $b_btn.fadeIn( 8000, function () {
+                $(this).show();
+            });
+        })
         
     </script>
 </head>
 
 <body>
+    <h1>
+        <a href="../../index.html" class="back_btn position-absolute">
+            <div class="position-absolute">
+                <span class="b_squ squ1"></span>
+                <span class="b_squ squ2"></span>
+                <span class="b_squ squ3"></span>
+                <span class="b_squ squ4"></span>
+                <span class="b_squ squ5"></span>
+            </div>
+            <span class="b_squ squ6 position-absolute"></span>
+            <span class="b_squ squ7 position-absolute"></span>
+            <span class="b_squ squ8 position-absolute"></span>
+            <span class="b_squ squ9 position-absolute"></span>
+        </a>
+    </h1>
+    <section id="content">
+
+    </section>
     <!-- icons -->
     <svg display="none"> 
         <symbol version="1.1" id="codepen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1088,22 +1143,19 @@
             </g>
         </symbol>
     </svg>
-
-    <main>
+    <main>    
         <canvas class="plane-canvas" id="plane-canvas"></canvas>
         <canvas class="main-canvas" id="main-canvas"></canvas>
         <!-- <div class="mouse" id="mouse">Hold mouse1 button</div> -->
-        
-
         <div class="plate">
-            <h2 class="text-animation" data-js="text">study of coding</h2>
+            <strong class="text-animation" data-js="text">study of coding</strong>
             <p class="text-animation" data-js="text">never end of learning</p>
             <div class="social" id="social">
                 <a target="_blank" class="social__codepen" href="https://codepen.io/fajjet">
                     <svg viewBox="0 0 32 32">
                         <use xlink:href="#codepen"></use>
                     </svg>
-                    <p>fajjet</p>
+                    <p>AUTHOR: FAJJET</p>
                 </a>
             </div>
         </div>
